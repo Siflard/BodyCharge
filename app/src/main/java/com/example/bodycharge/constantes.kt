@@ -39,9 +39,9 @@ class TRAME_MEASURE{
 class CARAC{
     companion object
     {
-        const val SERVICE_UUID = "0"//A changer
-        const val REQUEST_UUID = "0"//A changer
-        const val RESPONSE_UUID = "0"//A changer
+        const val SERVICE_UUID = "33745359-397a-2443-2646-29a4404e6352"
+        const val REQUEST_UUID = "7739535a-4326-4629-4a40-4e634166546a"
+        const val RESPONSE_UUID = "7739535b-4326-4629-4a40-4e634166546b"
     }
 }
 

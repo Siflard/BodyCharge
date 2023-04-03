@@ -138,12 +138,10 @@ class MainActivity : AppCompatActivity(), RecyclerView_Detection.OnItemClickList
 
     private fun permissionsNecessairesAutorisees(): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            return hasPermission(Manifest.permission.BLUETOOTH_SCAN)&&hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)&&hasPermission(
-                Manifest.permission.READ_EXTERNAL_STORAGE)&&hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            return hasPermission(Manifest.permission.BLUETOOTH_SCAN)&&hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)
         }
         else {//cas API<30
-            return hasPermission(Manifest.permission.BLUETOOTH) && hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)&&hasPermission(
-                Manifest.permission.READ_EXTERNAL_STORAGE)&&hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            return hasPermission(Manifest.permission.BLUETOOTH) && hasPermission(Manifest.permission.ACCESS_FINE_LOCATION)
         }
     }
 
@@ -177,10 +175,6 @@ class MainActivity : AppCompatActivity(), RecyclerView_Detection.OnItemClickList
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 listePermissions.add(android.Manifest.permission.ACCESS_BACKGROUND_LOCATION)
             }
-        }
-        if (!hasPermission(Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            listePermissions.add(Manifest.permission.READ_EXTERNAL_STORAGE)
-            listePermissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
         }
 
         if (listePermissions.isNotEmpty()) {
@@ -302,9 +296,7 @@ class MainActivity : AppCompatActivity(), RecyclerView_Detection.OnItemClickList
         } else {
             demanderPermissionsManquantes()
 
-            /*Intent(this@MainActivity, ServiceBLE::class.java).also { intent_receiver ->
-                bindService(intent_receiver, connection, BIND_AUTO_CREATE)
-            }*/
+
         }
         val buttonScan = findViewById<Button>(R.id.buttonConnect)
 
@@ -353,9 +345,6 @@ class MainActivity : AppCompatActivity(), RecyclerView_Detection.OnItemClickList
 
                 }
             }
-            /*val intent = Intent(this, ScanActivity::class.java)
-            startActivity(intent)
-            this.finish()*/
         }
 
     }
